@@ -1,4 +1,4 @@
-from boltz.main import predict
+from boltz.main import predict, get_cache_path
 import yaml
 import json
 from fastapi import FastAPI, HTTPException
@@ -23,7 +23,8 @@ def get_prediction(json_data: dict) -> dict:
             predict.callback(
                 data = input_yaml_file,
                 out_dir = tmpdir_path,
-                use_msa_server = True
+                use_msa_server = True,
+                cache = get_cache_path()
             )
             print(*tmpdir_path.glob("*"), sep="\n")
 
