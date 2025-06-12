@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools >= 80.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boltz-fastapi"
+version = "0.0.1"
+requires-python = ">=3.12,<3.13"
+description = "FastAPI wrapper of Boltz"
+readme = "README.md"
+dependencies = [
+    "boltz >= 2.1.1",
+    "fastapi >= 0.115.12",
+    "uvicorn >= 0.34.3"
+]
